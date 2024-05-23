@@ -6,6 +6,7 @@
   --content__title-color: #ff0070;
   --button-color: #ff0070;
   --bg-color: #000028;
+  --bg-image: url(../images/cover-image-dark.png);
   --accent-color: #ff0070;
   --title-color: #DB00FF;
   --title-shadow: #ff0070;
@@ -18,9 +19,9 @@
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   /* background: center url(/images/cover-image-dark.png); */
-  background-image: url(../images/cover-image-dark.png);
-  background-repeat: no-repeat;
-  background-position: top center;
+  background: var(--bg-color, #000028) var(--bg-image, url(../images/cover-image-dark.png)) no-repeat top center;
+  /* background-repeat: no-repeat;
+  background-position: top center; */
   background-size: cover;
   background-attachment: fixed;
   background-color: var(--bg-color, #000028);
@@ -39,8 +40,8 @@
   block-size: 25px;
   border-top: 1px solid var(--button-color, #ff0070);
   border-right: 1px solid var(--button-color, #ff0070);
-  inset-inline-end: clamp(0.625rem, 0.293rem + 1.495vw, 1.25rem);
-  inset-block-start: clamp(0.625rem, 0.293rem + 1.495vw, 1.25rem);
+  inset-inline-end: 10px;
+  inset-block-start: 10px;
 }
 
 .decorated-zone::after {
@@ -50,19 +51,19 @@
   block-size: 25px;
   border-bottom: 1px solid var(--button-color, #ff0070);
   border-left: 1px solid var(--button-color, #ff0070);
-  inset-inline-start: clamp(0.625rem, 0.293rem + 1.495vw, 1.25rem);
-  inset-block-end: clamp(0.625rem, 0.293rem + 1.495vw, 1.25rem);
+  inset-inline-start: 10px;
+  inset-block-end: 10px;
 }
 
 .rec-icon::before {
   content: 'REC';
   position: absolute;
   display: block;
-  inset-inline-end: clamp(2.375rem, 2.043rem + 1.495vw, 3rem);
-  inset-block-start: clamp(0.625rem, 0.293rem + 1.495vw, 1.25rem);
+  inset-inline-end: 38px;
+  inset-block-start: 10px;
   color: var(--accent-color, #ff0070);
   font-family: var(--main-font, sans-serif);
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 139%;
   font-weight: var(--thin, 400);
   visibility: var(--rec-icon-visibility, visible);
@@ -71,8 +72,8 @@
 .rec-icon::after {
   content: '';
   position: absolute;
-  inset-inline-end: clamp(1.188rem, 0.856rem + 1.495vw, 1.813rem);
-  inset-block-start: clamp(1.125rem, 0.793rem + 1.495vw, 1.75rem);
+  inset-inline-end: 19px;
+  inset-block-start: 18px;
   width: 9px;
   height: 9px;
   border-radius: 50%;
@@ -83,12 +84,14 @@
 
 .header {
   display: grid;
+  grid-template-rows: 1fr min-content 1fr;
   block-size: 100vh;
   padding: 10px;
 }
 
 .header__theme-menu {
   justify-self: end;
+  align-self: center;
 }
 
 .header__theme-menu-button {
@@ -98,14 +101,14 @@
   font-weight: var(--thin, 400);
   line-height: 100%;
   text-align: center;
-  font-size: inherit;
+  font-size: 1.125rem;
   cursor: pointer;
 }
 
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 15px;
 }
 
 .header__theme-menu-button:hover {
@@ -131,10 +134,12 @@
 }
 
 .header__title {
+  align-self: center;
   text-shadow: 4px 4px 0px var(--title-shadow, #FF0070);
 }
 
-.subtitle__block {
+.header__subtitle {
+  align-self: center;
   inline-size: 355px;
 }
 
@@ -144,8 +149,7 @@
   font-family: var(--main-font, sans-serif);
   font-weight: var(--bold, 700);
   line-height: 130%;
-  font-weight: 700;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .content {
@@ -160,7 +164,7 @@
 .content__title {
   margin-block-end: 20px;
   font-family: var(--main-font, sans-serif);
-  font-size: inherit;
+  font-size: 1.125rem;
   font-weight: var(--bold, 700);
   line-height: 130%;
   color: var(--content__title-color, #FF0070);
@@ -177,7 +181,7 @@
 .content-text__paragraph {
   font-family: var(--main-font, sans-serif);
   font-weight: var(--thin, 400);
-  font-size: inherit;
+  font-size: 1.125rem;
   line-height: 130%;
   color: var(--text-color, #F1B2CE);
 }
@@ -233,12 +237,38 @@
 
 @media (width >=768px) {
 
+  .decorated-zone::before {
+    inset-inline-end: 20px;
+    inset-block-start: 20px;
+  }
+
+  .decorated-zone::after {
+    inset-inline-start: 20px;
+    inset-block-end: 20px;
+  }
+
+  .rec-icon::before {
+    inset-inline-end: 48px;
+    inset-block-start: 20px;
+  }
+
+  .rec-icon::after {
+    inset-inline-end: 29px;
+    inset-block-start: 28px;
+  }
+
   .header {
     padding: 20px 20px 0;
+    gap: 145px;
+  }
+
+  .header__theme-menu {
+    margin-block-end: 30px;
+    align-self: end;
   }
 
   .header__title {
-    align-self: flex-start;
+    min-height: 115px;
     margin-inline-start: -20px
   }
 
@@ -246,7 +276,8 @@
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
-  .subtitle__block {
+  .header__subtitle {
+    align-self: start;
     justify-self: end;
     inline-size: 364px;
   }
@@ -263,7 +294,7 @@
   .why-hard {
     display: grid;
     grid-template-columns: 32% 1fr;
-    column-gap: 20px;
+    column-gap: 1.25rem;
   }
 
   .why-hard__title {
@@ -278,7 +309,7 @@
   .how-concentrate {
     display: grid;
     grid-template-columns: 32% 1fr;
-    column-gap: 23px;
+    column-gap: 1.25rem;
   }
 
   .how-concentrate__title {
@@ -320,6 +351,10 @@
     grid-row: span 1;
   }
 
+  .gallery__item:not(:last-child) {
+    margin-block-end: 0;
+  }
+
   .footer {
     padding: 0 20px;
   }
@@ -327,11 +362,13 @@
 
 @media (width >=1024px) {
 
-  .header {}
+  .header {
+    gap: 97px;
+  }
 
   .header__theme-menu {
-    grid-row: 1/2;
     justify-self: center;
+    align-self: start;
     margin-block-start: 0;
   }
 
@@ -341,20 +378,19 @@
     gap: 10px;
   }
 
-
   .header__title {
+    min-height: 145px;
     align-self: flex-start;
   }
 
-  .subtitle__block {
+  .header__subtitle {
     align-self: start;
-    margin-block-end: 0;
     inline-size: 491px;
   }
 
   .what-reduces__list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 31.9%);
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, 32%);
+    gap: 1.23rem;
   }
 }
