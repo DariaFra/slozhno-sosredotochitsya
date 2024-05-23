@@ -4,20 +4,20 @@
   переключая тему
 */
 :root.theme-light {
-  /* Переменные светлой темы */    
-    --main-font: 'IBM Plex Mono';
-    --text-color: #353430;
-    --title-decor-text: #353430;
-    --content__title-color: #353430;
-    --button-color: #353430;
-    --bg-color: #FFF1F7;
-    --accent-color: #FF8DCB;
-    --title-color: #FFC2E6;
-    --title-shadow: #ff0070;
-    --outline-hover: #32312D66;
-    --rec-icon-visibility: hidden; 
-    --bold: 700;
-    --thin: 400;
+  /* Переменные светлой темы */
+  --main-font: 'IBM Plex Mono';
+  --text-color: #353430;
+  --title-decor-text: #353430;
+  --content__title-color: #353430;
+  --button-color: #353430;
+  --bg-color: #FFF1F7;
+  --accent-color: #FF8DCB;
+  --title-color: #FFC2E6;
+  --title-shadow: #ff0070;
+  --outline-hover: #32312D66;
+  --rec-icon-visibility: hidden;
+  --bold: 700;
+  --thin: 400;
 }
 
 .page.theme_light {
@@ -30,24 +30,10 @@
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
-  /* background-color: var(--bg-color, #FFF1F7);
-  --main-font: 'IBM Plex Mono';
-  --text-color: #353430;
-  --title-decor-text: #353430;
-  --bg-color: #FFF1F7;
-  --accent-color: #FF8DCB;
-  --bold: 700;
-  --thin: 400; */
-  ;
 }
 
-/* .rec-icon::before, 
-.rec-icon::after {
-  visibility: hidden;
-} */
-
 @media (prefers-color-scheme: light) {
-  :root {   
+  :root {
     --main-font: 'IBM Plex Mono';
     --text-color: #353430;
     --title-decor-text: #353430;
@@ -58,7 +44,7 @@
     --title-color: #FFC2E6;
     --title-shadow: #ff0070;
     --outline-hover: #32312D66;
-    --rec-icon-visibility: hidden; 
+    --rec-icon-visibility: hidden;
     --bold: 700;
     --thin: 400;
   }
