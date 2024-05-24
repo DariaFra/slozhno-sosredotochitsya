@@ -1,14 +1,14 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 :root {
-  --main-font: 'IBM Plex Mono';
-  --text-color: #F1B2CE;
+  --main-font: "IBM Plex Mono";
+  --text-color: #f1b2ce;
   --title-decor-text: #000028;
   --content__title-color: #ff0070;
   --button-color: #ff0070;
   --bg-color: #000028;
   --bg-image: url(../images/cover-image-dark.png);
   --accent-color: #ff0070;
-  --title-color: #DB00FF;
+  --title-color: #db00ff;
   --title-shadow: #ff0070;
   --outline-hover: #ff007040;
   --rec-icon-visibility: visible;
@@ -19,13 +19,14 @@
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   /* background: center url(/images/cover-image-dark.png); */
-  background: var(--bg-color, #000028) var(--bg-image, url(../images/cover-image-dark.png)) no-repeat top center;
+  background: var(--bg-color, #000028)
+    var(--bg-image, url(../images/cover-image-dark.png)) no-repeat top center;
   /* background-repeat: no-repeat;
   background-position: top center; */
   background-size: cover;
   background-attachment: fixed;
   background-color: var(--bg-color, #000028);
-  color: var(--text-color, #F1B2CE);
+  color: var(--text-color, #f1b2ce);
   font-family: var(--main-font, sans-serif);
 }
 
@@ -34,7 +35,7 @@
 }
 
 .decorated-zone::before {
-  content: '';
+  content: "";
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
@@ -45,7 +46,7 @@
 }
 
 .decorated-zone::after {
-  content: '';
+  content: "";
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
@@ -56,7 +57,7 @@
 }
 
 .rec-icon::before {
-  content: 'REC';
+  content: "REC";
   position: absolute;
   display: block;
   inset-inline-end: 38px;
@@ -70,7 +71,7 @@
 }
 
 .rec-icon::after {
-  content: '';
+  content: "";
   position: absolute;
   inset-inline-end: 19px;
   inset-block-start: 18px;
@@ -78,7 +79,7 @@
   height: 9px;
   border-radius: 50%;
   background-color: var(--accent-color, #ff0070);
-  box-shadow: 0px 0px 4px 2px var(--accent-color, #FF0070);
+  box-shadow: 0px 0px 4px 2px var(--accent-color, #ff0070);
   visibility: var(--rec-icon-visibility, visible);
 }
 
@@ -116,7 +117,7 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--button-color, #FF0070);
+  border-bottom: 1px solid var(--button-color, #ff0070);
 }
 
 .header__theme-menu-button_active {
@@ -130,12 +131,12 @@
   font-weight: var(--bold, 700);
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 82.5%;
-  color: var(--title-color, #DB00FF);
+  color: var(--title-color, #db00ff);
 }
 
 .header__title {
   align-self: center;
-  text-shadow: 4px 4px 0px var(--title-shadow, #FF0070);
+  text-shadow: 4px 4px 0px var(--title-shadow, #ff0070);
 }
 
 .header__subtitle {
@@ -167,7 +168,7 @@
   font-size: 1.125rem;
   font-weight: var(--bold, 700);
   line-height: 130%;
-  color: var(--content__title-color, #FF0070);
+  color: var(--content__title-color, #ff0070);
 }
 
 .subtitle {
@@ -183,19 +184,19 @@
   font-weight: var(--thin, 400);
   font-size: 1.125rem;
   line-height: 130%;
-  color: var(--text-color, #F1B2CE);
+  color: var(--text-color, #f1b2ce);
 }
 
 .content__text-link {
-  text-shadow: 2px 2px var(--accent-color, #FF0070);
+  text-shadow: 2px 2px var(--accent-color, #ff0070);
 }
 
 .content__text-link:hover {
-  border-bottom: 1px solid var(--text-color, #F1B2CE);
+  border-bottom: 1px solid var(--text-color, #f1b2ce);
 }
 
 .content__text-link:focus-visible {
-  border: 1px solid var(--text-color, #F1B2CE);
+  border: 1px solid var(--text-color, #f1b2ce);
 }
 
 .subtitle-thin {
@@ -217,7 +218,7 @@
   margin-block-end: 5px;
 }
 
-.gallery__list>.gallery__item>.gallery__picture {
+.gallery__list > .gallery__item > .gallery__picture {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -232,11 +233,10 @@
 }
 
 .footer__title {
-  text-shadow: 2px 2px 0px var(--accent-color, #FF0070);
+  text-shadow: 2px 2px 0px var(--accent-color, #ff0070);
 }
 
 @media (width >=768px) {
-
   .decorated-zone::before {
     inset-inline-end: 20px;
     inset-block-start: 20px;
@@ -269,7 +269,7 @@
 
   .header__title {
     min-height: 115px;
-    margin-inline-start: -20px
+    margin-inline-start: -20px;
   }
 
   .main__title {
@@ -299,7 +299,7 @@
 
   .why-hard__title {
     display: grid;
-    grid-row: span 2
+    grid-row: span 2;
   }
 
   .what-reduces__title {
@@ -321,32 +321,38 @@
     margin-block-end: 60px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: clamp(12rem, -0.75rem + 26.563vw, 16.25rem) clamp(14.375rem, -1.563rem + 33.203vw, 19.688rem) clamp(19.875rem, -0.75rem + 42.969vw, 26.75rem);
+    grid-template-rows:
+      clamp(12rem, -0.75rem + 26.563vw, 16.25rem) clamp(
+        14.375rem,
+        -1.563rem + 33.203vw,
+        19.688rem
+      )
+      clamp(19.875rem, -0.75rem + 42.969vw, 26.75rem);
     gap: 1.25rem;
     grid-auto-flow: dense;
   }
 
-  .gallery__list>.gallery__item:nth-child(1n) {
+  .gallery__list > .gallery__item:nth-child(1n) {
     grid-column: span 2;
     grid-row: span 1;
   }
 
-  .gallery__list>.gallery__item:nth-child(2n) {
+  .gallery__list > .gallery__item:nth-child(2n) {
     grid-column: span 1;
     grid-row: span 2;
   }
 
-  .gallery__list>.gallery__item:nth-child(3n) {
+  .gallery__list > .gallery__item:nth-child(3n) {
     grid-column: span 1;
     grid-row: span 2;
   }
 
-  .gallery__list>.gallery__item:nth-child(4n) {
+  .gallery__list > .gallery__item:nth-child(4n) {
     grid-column: span 1;
     grid-row: span 1;
   }
 
-  .gallery__list>.gallery__item:nth-child(5n) {
+  .gallery__list > .gallery__item:nth-child(5n) {
     grid-column: span 2;
     grid-row: span 1;
   }
@@ -361,7 +367,6 @@
 }
 
 @media (width >=1024px) {
-
   .header {
     gap: 97px;
   }
